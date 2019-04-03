@@ -12,9 +12,9 @@
 
 
 std::string reserved[] = {
-	"var", "for", "while", "do", "if", "else", "out", "in", "func", "code"
+	"var", "for", "while", "do", "if", "else", "out", "in", "func", "code", "print", "cout"
 };
-static int COUNT_OF_RESERVED = 10;
+static int COUNT_OF_RESERVED = 12;
 
 bool isReserved(std::string const& word) {
 	for (int i = 0; i < COUNT_OF_RESERVED; ++i)
@@ -259,6 +259,20 @@ Element* totalParse(Element* head, vector<std::string> const& code, size_t &i, s
 					else throw CompileExeption("Unexpected token in OUT", i, j);
 					head = new StandartFunction("out", variables);
 				}
+				else if (temp == "cout") {//reserved standart function
+				vector<Element*> variables;
+				Element* temp;
+				if (nextChar(code, i, j) == '(') {
+					incCode(code, i, j);
+					temp = totalParse(new Element, code, i, j, true);
+					if (code[i][j] == ')')
+						incCode(code, i, j);
+					else throw CompileExeption("Unexpected token in OUT", i, j);
+					variables.push_back(temp);
+				}
+				else throw CompileExeption("Unexpected token in OUT", i, j);
+				head = new StandartFunction("cout", variables);
+				}
 				else if (temp == "in") {//reserved unworked function
 					vector<Element*> variables;
 					if (nextChar(code, i, j) == '(') {
@@ -300,6 +314,25 @@ Element* totalParse(Element* head, vector<std::string> const& code, size_t &i, s
 						else throw CompileExeption("Unexpected token on FUNCTION", i, j);*/
 					}
 					else throw CompileExeption("Unexpected token in OUT", i, j);
+				}
+				else if (temp == "print") {
+					vector<Element*> vars;
+					if (nextChar(code, i, j) == '(') {
+						incCode(code, i, j);
+						while (nextChar(code, i, j) != ')') {
+							vars.push_back(totalParse(new Element, code, i, j, true));
+							if (endOfCode(code, i))
+								throw CompileExeption("Unexpected end of code", i, j);
+							if (nextChar(code, i, j) == ';')
+								incCode(code, i, j);
+						}
+						incCode(code, i, j);
+						head = new StandartFunction("print", vars);
+						/*if (nextChar(code, i, j) == ';')
+							incCode(code, i, j);
+						else throw CompileExeption("Unexpected token on FUNCTION", i, j);*/
+					}
+					else throw CompileExeption("Unexpected token in PRINT", i, j);
 				}
 			}
 			else if (nextChar(code, i, j) == '(') {//function

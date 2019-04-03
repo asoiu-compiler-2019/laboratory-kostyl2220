@@ -1,10 +1,19 @@
-9
+Fibbonacci 1, value 1
+Fibbonacci 2, value 2
+Fibbonacci 3, value 3
+Fibbonacci 4, value 5
+Fibbonacci 5, value 8
+Fibbonacci 6, value 13
+Fibbonacci 7, value 21
+Fibbonacci 8, value 34
+Fibbonacci 9, value 55
+Fibbonacci 10, value 89
+Fibbonacci 11, value 144
+Fibbonacci 12, value 233
+Fibbonacci 13, value 377
+Fibbonacci 14, value 610
+Fibbonacci 15, value 987
 
-cube = 25
-c = 5
-u = 55
-v = 45
-a = 9
-boo = 16
-s = 30.500000
-l = 30.500000
+el1 = 987
+el0 = 610
+FIBB_END = 15

@@ -1,2 +1,18 @@
-﻿  StandartFunction.cpp
+﻿  Assignment.cpp
+  Condition.cpp
+  ConsoleCompiler.cpp
+  CreateVariable.cpp
+  Element.cpp
+  Function.cpp
+  Loops.cpp
+  Node.cpp
+  Program.cpp
+e:\ip-51\4 course\8 semester\compilators\consolecompiler\consolecompiler\program.cpp(15): warning C5043: 'Program::run': exception specification does not match previous declaration
+  e:\ip-51\4 course\8 semester\compilators\consolecompiler\consolecompiler\program.h(14): note: see declaration of 'Program::run'
+e:\ip-51\4 course\8 semester\compilators\consolecompiler\consolecompiler\program.cpp(30): warning C4018: '<': signed/unsigned mismatch
+  StandartFunction.cpp
+  SyntaxParse.cpp
+  Variable.cpp
+  parse.cpp
+  Generating Code...
   ConsoleCompiler.vcxproj -> E:\IP-51\4 course\8 semester\Compilators\ConsoleCompiler\Debug\ConsoleCompiler.exe

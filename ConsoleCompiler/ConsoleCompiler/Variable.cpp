@@ -76,60 +76,60 @@ Variable Variable::operator+(const Variable& var) {
 	if (this->getType() == "string"
 		|| var.getType() == "string")
 		return Variable(this->getValue() + var.getValue(), "rValue", "string");
-	if (this->getType() == "double"
-		|| var.getType() == "double")
-		return Variable(to_string(atof(this->getValue().c_str()) + atof(var.getValue().c_str())), "rValue", "double");
-	return Variable(to_string(atoi(this->getValue().c_str()) + atoi(var.getValue().c_str())), "rValue", "double");
+	if (this->getType() == "int"
+		|| var.getType() == "int")
+		return Variable(to_string(atoi(this->getValue().c_str()) + atoi(var.getValue().c_str())), "rValue", "int");
+	return Variable(to_string(atof(this->getValue().c_str()) + atof(var.getValue().c_str())), "rValue", "double");
 }
 
 Variable Variable::operator-(const Variable& var){
 	if (this->getType() == "string"
 		|| var.getType() == "string")
 		throw TypeException("Can't subdivide string", line, column);//undefined
-	if (this->getType() == "double"
-		|| var.getType() == "double")
-		return Variable(to_string(atof(this->getValue().c_str()) - atof(var.getValue().c_str())), "rValue", "double");
-	return Variable(to_string(atoi(this->getValue().c_str()) - atoi(var.getValue().c_str())), "rValue", "double");
+	if (this->getType() == "int"
+		|| var.getType() == "int")
+		return Variable(to_string(atoi(this->getValue().c_str()) - atoi(var.getValue().c_str())), "rValue", "int");
+	return Variable(to_string(atof(this->getValue().c_str()) - atof(var.getValue().c_str())), "rValue", "double");
 }
 
 Variable Variable::operator>(const Variable& var){
 	if (this->getType() == "string"
 		|| var.getType() == "string")
 		return Variable(to_string(this->getValue() > var.getValue()), "rValue", "string");
-	if (this->getType() == "double"
-		|| var.getType() == "double")
-		return Variable(to_string(atof(this->getValue().c_str()) > atof(var.getValue().c_str())), "rValue", "double");
-	return Variable(to_string(atoi(this->getValue().c_str()) > atoi(var.getValue().c_str())), "rValue", "double");
+	if (this->getType() == "int"
+		|| var.getType() == "int")
+		return Variable(to_string(atoi(this->getValue().c_str()) > atoi(var.getValue().c_str())), "rValue", "int");
+	return Variable(to_string(atof(this->getValue().c_str()) > atof(var.getValue().c_str())), "rValue", "double");
 }
 
 Variable Variable::operator<(const Variable& var){
 	if (this->getType() == "string"
 		|| var.getType() == "string")
 		return Variable(to_string(this->getValue() < var.getValue()), "rValue", "string");
-	if (this->getType() == "double"
-		|| var.getType() == "double")
-		return Variable(to_string(atof(this->getValue().c_str()) < atof(var.getValue().c_str())), "rValue", "double");
-	return Variable(to_string(atoi(this->getValue().c_str()) < atoi(var.getValue().c_str())), "rValue", "double");
+	if (this->getType() == "int"
+		|| var.getType() == "int")
+		return Variable(to_string(atoi(this->getValue().c_str()) < atoi(var.getValue().c_str())), "rValue", "int");
+	return Variable(to_string(atof(this->getValue().c_str()) < atof(var.getValue().c_str())), "rValue", "double");
 }
 
 Variable Variable::operator/(const Variable& var){
 	if (this->getType() == "string"
 		|| var.getType() == "string")
 		throw TypeException("Can't divide string", line, column);//undefined
-	if (this->getType() == "double"
-		|| var.getType() == "double")
-		return Variable(to_string(atof(this->getValue().c_str()) / atof(var.getValue().c_str())), "rValue", "double");
-	return Variable(to_string(atoi(this->getValue().c_str()) / atoi(var.getValue().c_str())), "rValue", "double");
+	if (this->getType() == "int"
+		|| var.getType() == "int")
+		return Variable(to_string(atoi(this->getValue().c_str()) / atoi(var.getValue().c_str())), "rValue", "int");
+	return Variable(to_string(atof(this->getValue().c_str()) / atof(var.getValue().c_str())), "rValue", "double");
 }
 
 Variable Variable::operator*(const Variable& var){
 	if (this->getType() == "string"
 		|| var.getType() == "string")
 		throw TypeException("Can't multiply string", line, column);//undefined
-	if (this->getType() == "double"
-		|| var.getType() == "double")
-		return Variable(to_string(atof(this->getValue().c_str()) * atof(var.getValue().c_str())), "rValue", "double");
-	return Variable(to_string(atoi(this->getValue().c_str()) * atoi(var.getValue().c_str())), "rValue", "double");
+	if (this->getType() == "int"
+		|| var.getType() == "int")
+		return Variable(to_string(atoi(this->getValue().c_str()) * atoi(var.getValue().c_str())), "rValue", "int");
+	return Variable(to_string(atof(this->getValue().c_str()) * atof(var.getValue().c_str())), "rValue", "double");
 }
 
 /*Variable Variable::operator==(const Variable& var){

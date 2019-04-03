@@ -10,4 +10,5 @@ struct Blackboard
 	std::vector<Variable> vars;
 	std::vector<FunctionBody> funcs;
 	std::ostream* stream;
+	std::ostream* console;
 };

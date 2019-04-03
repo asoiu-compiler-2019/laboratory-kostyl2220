@@ -49,6 +49,7 @@ void Program::outVarList(ostream* output) {
 Variable Program::runProgram(ostream* output) throw(ExceptionBase){
 	Blackboard blackboard;
 	blackboard.stream = output;
+	blackboard.console = &cout;
 	return run(blackboard);
 }
 

@@ -7,7 +7,7 @@ private:
 	std::string varType;//type of variable
 	std::string varName;//name of var
 public:
-	Variable(std::string const& val, std::string name, int ln = 0, int col = 0) : Element(VAR, val, ln, col), varName(name), varType("double") {};
+	Variable(std::string const& val, std::string name, int ln = 0, int col = 0) : Element(VAR, val, ln, col), varName(name), varType("int") {};
 	Variable(std::string val, std::string name, std::string tp, int ln = 0, int col = 0) : Element(VAR, val, ln, col), varName(name), varType(tp) {};
 	Variable() = default;
 	Variable(Variable const&) = default;

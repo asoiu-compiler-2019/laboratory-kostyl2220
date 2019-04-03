@@ -10,6 +10,10 @@ Variable StandartFunction::run(Blackboard& blackboard) throw(ExceptionBase){
 		for (size_t i = 0; i < params.size(); ++i)
 			*(blackboard.stream) << params[i]->run(blackboard).getValue() << std::endl;
 	}
+	if (value == "cout") {
+		for (size_t i = 0; i < params.size(); ++i)
+			*(blackboard.console) << params[i]->run(blackboard).getValue() << std::endl;
+	}
 	if (value == "in") {
 		std::string val;
 		std::getline(cin, val);
@@ -50,6 +54,25 @@ Variable StandartFunction::run(Blackboard& blackboard) throw(ExceptionBase){
 		pr.addCode(code);
 		return pr.run(blackboard);
 	}
+	if (value == "print")
+	{
+		Variable formatString = params[0]->run(blackboard);
+		if (formatString.getType() != "string")
+		{
+			return Variable("0", "rValue", "int");
+		}
+		std::string raw_string = formatString.getValue();
+		size_t index = 0;
+		size_t const length = raw_string.length();
+		size_t formatPos = raw_string.find('%');
+		while (formatPos != std::string::npos)
+		{
+			raw_string.replace(formatPos, 1, params[++index]->run(blackboard).getValue());
+			formatPos = raw_string.find('%', formatPos);
+		}
+		*(blackboard.stream) << raw_string << std::endl;
+	}
+
 	return Variable("0", "rValue", "int");
 }
 

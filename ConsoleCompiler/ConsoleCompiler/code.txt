@@ -1,22 +1,11 @@
-var l = 10.5;
-var s = for (var a = 0; a < 5; a = a + 1)
+cout("Please, enter ending fibbonachi number");
+var FIBB_END = in();
+var el0 = 0;
+var el1 = 1;
+for (var i = 0; i < FIBB_END; i = i + 1)
 {
-	l = l 
-	+ a * 2;
-};
-{
-	var foo = func bar(led)
-	{
-		led * led;
-	};
+	var temp = el0 + el1;
+	el0 = el1;
+	el1 = temp;
+	print("Fibbonacci %, value %"; i + 1; el1);
 }
-var boo = bar(4);
-{
-	var p = 0;
-}
-var a = 5 + if (s > 10) 4; else 3;
-out(a);
-var v = in();
-var u = v + 10;
-var c = code();
-var cube = pow2(c);
