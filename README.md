@@ -1,3 +1,6 @@
+# laboratory-kostyl2220
+laboratory-kostyl2220 created by GitHub Classroom
+
 Current compiler is close to C++ compiler with reduced functionality.
 
 Types:
